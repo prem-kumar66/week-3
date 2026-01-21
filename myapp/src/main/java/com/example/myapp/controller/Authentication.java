@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.util.*;
 import com.example.myapp.dto.SignupRequest;
 import com.example.myapp.model.User;
 import com.example.myapp.repo.UserRepository;
@@ -36,4 +36,11 @@ public class Authentication {
 
         return "signup sucess";
     }
+
+    @GetMapping("/users")
+    List<User> getALlUsers(){
+        
+        return db.findAll();
+    }
 }
+
